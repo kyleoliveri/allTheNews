@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const axios = require("axios");
+const cheerio = require("cheerio");
 
 //INITIALIZE EXPRESS
 const app = express();
@@ -8,7 +9,7 @@ const app = express();
 app.use(express.static("public"));
 const PORT = process.env.PORT || 3000;
 const db = require("./models");
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost.newsdb";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://user:password1@ds237267.mlab.com:37267/heroku_1ssgpqc6";
 
 mongoose.connect(MONGODB_URI);
 
