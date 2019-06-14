@@ -8,8 +8,8 @@ $.getJSON("/articles", function(data) {
         var div = $("<div class='card'>");
         div.append(`<div class='card-header'>
       ${data[i].title} <br>
-        <a class="btn btn-small btn-primary" href="${data[i].url}"> Link </a>
-        <a class="btn btn-small text-white btn-danger"data-toggle="modal" data-target="#myModal"  id="save" data-id="${
+        <a class="btn btn-small btn-dark" target="_blank" href="${data[i].url}"> Link </a>
+        <a class="btn btn-small text-white btn-secondary"data-toggle="modal" data-target="#myModal"  id="save" data-id="${
           data[i]._id
         }"> Save </a>
           `);
@@ -18,13 +18,13 @@ $.getJSON("/articles", function(data) {
         var div = $("<div class='card'>");
         div.append(`<div class='card-header' id="notePage">
         ${data[i].title} <br>
-          <a class="btn btn-small btn-primary" href="${data[i].url}"> Link </a>
-          <a class="btn btn-small text-white btn-danger deleteMe" data-id="${
+          <a class="btn btn-small btn-dark" target="_blank" href="${data[i].url}"> Link </a>
+          <a class="btn btn-small text-white btn-secondary deleteMe" data-id="${
             data[i]._id
-          }" id="tacoTruck">delete</a>
+          }" id="tacoTruck">Delete</a>
           <a class="btn btn-small text-white btn-success" data-toggle="modal" id="update" data-target="#myModal" data-id="${
             data[i]._id
-          }"> update </a>
+          }"> Update </a>
             `);
         $("#savednotes").append(div);
       }

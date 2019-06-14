@@ -59,7 +59,7 @@ app.get("/all", function(req, res) {
           url: url,
           img: img
         };
-  
+        
         db.News.create(newsData)
           .then(dbNews => console.log(dbNews))
           .catch(err => res.json(err));
