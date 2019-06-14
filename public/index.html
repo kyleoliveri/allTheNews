@@ -1,34 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- MATERIALIZE CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta charset="UTF-8" />
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>All The News</title>
 </head>
 
-<header>
-
-</header>
-
 <body>
-
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col lg12 md12 sm12">
-                    <h1 class="center">HELLO</h1>
+    <div id="container">
+        <div class="row">
+            <div class="col-sm-12 mx-auto">
+                <div class="jumbotron text-center">
+                    <h1 class="display-8 title">All The News</h1>
+                    <p class="lead scrapeInfo">
+                        Click the button below to scrape some news!
+                    </p>
+                    <a class="btn btn-secondary btn-lg scrapeBtn" href="/scrape" role="button">Scrape the News</a>
                 </div>
             </div>
         </div>
-    </main>
-    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card col-sm-6 card-header newsDiv">
+                        Current News:
+                        <div id="articles"></div>
+                    </div>
+                    <div class="card col-sm-6 card-header newsDiv">
+                        Saved News:
+                        <div id="savednotes"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" id="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Save A Note</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
+                        <div id='notes'></div>
+                        <div class='card-text' id="articleId"></div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Saved Note Title</label>
+                                <input type="text" class="form-control" id="titleinput">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Saved Note Body:</label>
+                                <textarea class="form-control" id="bodyinput"></textarea>
+                            </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitModal">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="myModal1" tabindex="-1" role="dialog" id="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Save A Note</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
+                        <div id='notes'></div>
+                        <div class='card-text' id="articleId"></div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Saved Note Title</label>
+                                <input type="text" class="form-control" id="titleinput">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Saved Note Body:</label>
+                                <textarea class="form-control" id="bodyinput"></textarea>
+                            </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitModal">Save changes</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
 
